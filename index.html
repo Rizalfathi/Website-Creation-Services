@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A considered web design portfolio for brands that want a sharper digital presence.">
+    <title>Rizal Fathi | Web design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #202320;
+            --muted: #6b716a;
+            --paper: #f4f5ef;
+            --line: #d9ddd4;
+            --lime: #d7f26b;
+            --white: #ffffff;
+            --serif: Georgia, 'Times New Roman', serif;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+        header { padding: 24px 0; }
+        .nav { display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 800; letter-spacing: -.03em; }
+        .brand-mark { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--lime); font-family: var(--serif); font-size: 17px; font-style: italic; }
+        .nav-links { display: flex; gap: 28px; color: var(--muted); font-size: 12px; font-weight: 700; }
+        .nav-links a:hover { color: var(--ink); }
+
+        .hero { min-height: 660px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr); gap: 70px; align-items: center; padding: 62px 0 96px; }
+        .eyebrow, .kicker { display: flex; align-items: center; gap: 9px; color: var(--muted); font: 500 11px 'DM Mono', monospace; letter-spacing: .04em; text-transform: uppercase; }
+        .eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #89a940; box-shadow: 0 0 0 4px #e5edc9; }
+        h1 { max-width: 700px; margin: 23px 0 26px; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: .94; letter-spacing: -.075em; font-weight: 700; }
+        h1 em { font-family: var(--serif); font-weight: 400; }
+        .intro { max-width: 480px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
+        .hero-actions { display: flex; align-items: center; gap: 22px; margin-top: 35px; }
+        .button { display: inline-flex; align-items: center; gap: 10px; padding: 14px 18px; border: 1px solid var(--ink); border-radius: 4px; background: var(--ink); color: var(--white); font-size: 12px; font-weight: 800; transition: transform .2s, background .2s; }
+        .button:hover { transform: translateY(-3px); background: #3c423d; }
+        .button svg { width: 14px; }
+        .text-link { padding-bottom: 4px; border-bottom: 1px solid var(--ink); font-size: 12px; font-weight: 800; }
+
+        .portrait-wrap { position: relative; max-width: 430px; justify-self: end; }
+        .portrait { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #c1ccba; }
+        .portrait::after { content: ''; position: absolute; inset: 0; background: linear-gradient(145deg, transparent 35%, rgba(30, 39, 32, .28)); }
+        .portrait img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.72); }
+        .portrait-note { position: absolute; right: -16px; bottom: 22px; z-index: 1; width: 120px; padding: 16px; background: var(--lime); font: 500 11px/1.45 'DM Mono', monospace; transform: rotate(4deg); }
+        .portrait-note strong { display: block; margin-top: 7px; font: 800 21px/1 'Manrope', sans-serif; letter-spacing: -.06em; }
+
+        .services { padding: 0 0 106px; }
+        .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding: 0 0 25px; border-bottom: 1px solid var(--line); }
+        h2 { margin: 12px 0 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1; letter-spacing: -.07em; }
+        .section-heading > p { max-width: 220px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; text-align: right; }
+        .service-list { display: grid; grid-template-columns: repeat(2, 1fr); }
+        .service { display: grid; grid-template-columns: 50px 1fr auto; align-items: start; gap: 18px; min-height: 154px; padding: 28px 20px 28px 0; border-bottom: 1px solid var(--line); }
+        .service:nth-child(even) { padding-left: 32px; border-left: 1px solid var(--line); }
+        .service-number { color: #9aa197; font: 500 11px 'DM Mono', monospace; }
+        .service h3 { margin: 0 0 8px; font-size: 19px; letter-spacing: -.05em; }
+        .service p { max-width: 310px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+        .service-thumbnail { width: 100%; height: 84px; margin-top: 18px; display: block; object-fit: cover; border: 1px solid rgba(32, 35, 32, .08); filter: saturate(.75); transition: filter .2s, transform .2s; }
+        .service:hover .service-thumbnail { filter: saturate(1); transform: scale(1.02); }
+        .service-arrow { color: var(--muted); font-size: 20px; transition: transform .2s; }
+        .service:hover .service-arrow { transform: translate(3px, -3px); color: var(--ink); }
+
+        .footer { display: grid; grid-template-columns: 1fr auto; gap: 30px; padding: 29px 0 36px; border-top: 1px solid var(--line); }
+        .footer p { margin: 0; color: var(--muted); font: 11px 'DM Mono', monospace; }
+        .footer-links { display: flex; gap: 20px; font-size: 11px; font-weight: 800; }
+
+        @media (max-width: 720px) {
+            .container { width: min(100% - 32px, 560px); }
+            header { padding: 18px 0; }
+            .nav-links { gap: 15px; }
+            .nav-links a:first-child { display: none; }
+            .hero { min-height: auto; display: flex; flex-direction: column; align-items: stretch; gap: 45px; padding: 63px 0 84px; }
+            h1 { margin-top: 20px; font-size: clamp(3.35rem, 17vw, 5.2rem); }
+            .intro { font-size: 15px; }
+            .portrait-wrap { width: calc(100% - 18px); margin-right: 18px; align-self: center; }
+            .portrait-note { right: -15px; }
+            .section-heading { display: block; }
+            .section-heading > p { margin-top: 19px; text-align: left; }
+            .service-list { display: block; }
+            .service, .service:nth-child(even) { min-height: 128px; padding: 23px 0; border-left: 0; }
+            .service h3 { font-size: 17px; }
+            .service-thumbnail { height: 72px; margin-top: 15px; }
+            .footer { display: block; }
+            .footer-links { margin-top: 19px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="#top" aria-label="Studio North home"><span class="brand-mark">R</span>Rizal Fathi</a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="#work">Website List</a>
+                <a href="#contact">Social Media <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="container hero" aria-labelledby="hero-title">
+            <div>
+                <div class="eyebrow">Website design & development · Tersedia untuk pemesanan!</div>
+                <h1 id="hero-title">Ruang digital untuk setiap <em>keinginan</em> mu.</h1>
+                <p class="intro">Aku bisa membantu menguraikan perasaan, keinginan, dan kasih sayang melewati sebuah perantara digital yang akan berkesan sampai hari yang akan datang.</p>
+                <div class="hero-actions">
+                    <a class="button" href="#work">Jenis websitenya? <span aria-hidden="true">↓</span></a>
+                    <a class="text-link" href="https://wa.me/6285189972322?text=Halo%20Rizal%2C%20saya%20ingin%20membahas%20pesanan%20website%20saya.%20">WhatsApp? <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+            <div class="portrait-wrap">
+                <div class="portrait">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85" alt="Bright, considered creative studio interior">
+                </div>
+                <div class="portrait-note">Currently shaping<br><strong>good ideas</strong></div>
+            </div>
+        </section>
+
+        <section class="container services" id="work" aria-labelledby="services-title">
+            <div class="section-heading">
+                <div><div class="kicker">01 / Website list</div><h2 id="services-title">Website dan<br>segala macamnya.</h2></div>
+                <p>Dibawah ini adalah segala jenis website yang bisa menjadi milik kamu, dari kamu, dan untuk kamu!.</p>
+            </div>
+            <div class="service-list">
+                <a class="service" href="social-media-hub.html"><span class="service-number">01</span><span><h3>Social Media Hub</h3><p>Seluruh link media sosialmu akhirnya ada di satu tempat. Bayangkan saja seperti ID card digital dengan captionmu sendiri ✨.</p><img class="service-thumbnail" src="res/Social Media Hub Resources/SMH.png" alt="Minimal personal portfolio workspace"></span><span class="service-arrow" aria-hidden="true">↗</span></a>
+                <a class="service" href="love-letter.html"><span class="service-number">02</span><span><h3>Love/Anniversary Letter</h3><p>Berikan ucapan untuk orang tersayang! yang belum punya <i>my</i> juga beli aja buat jadi jimat ato apa kek 🙏.</p><img class="service-thumbnail" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Small business owner working at a counter"></span><span class="service-arrow" aria-hidden="true">↗</span></a>
+                <a class="service" href="personal-website.html"><span class="service-number">03</span><span><h3>Personal Website</h3><p>Personalisasikan hobi, keahlian, dan karaktermu kedalam kanvas digital! Sigma gak tuh punya website sendiri 😝.</p><img class="service-thumbnail" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80" alt="Bright creative studio interior"></span><span class="service-arrow" aria-hidden="true">↗</span></a>
+                <a class="service" href="portfolio-website.html"><span class="service-number">04</span><span><h3>Portfolio Website</h3><p>Udah gak jaman sekarang bikin portfolio di canva, mending langsung kirim link website kalian aja ✌️.</p><img class="service-thumbnail" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=600&q=80" alt="Laptop showing a new website launch"></span><span class="service-arrow" aria-hidden="true">↗</span></a>
+                <a class="service" href="branding-website.html"><span class="service-number">05</span><span><h3>Branding Website</h3><p>Buat kalian yang berbisnis dan ingin memiliki <i>presence</i> di dunia digital, udah langsung pesan saja 😎.</p><img class="service-thumbnail" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=600&q=80" alt="Laptop showing a new website launch"></span><span class="service-arrow" aria-hidden="true">↗</span></a>
+                <a class="service" href="full-custom-website.html"><span class="service-number">06</span><span><h3>Full-Customize Website</h3><p>Bebas kustomisasi website dan alurnya dari awal sampai akhir, Request system sesuka kamu aja dah.</p><img class="service-thumbnail" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=600&q=80" alt="Laptop showing a new website launch"></span><span class="service-arrow" aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container footer" id="contact">
+        <p>© 2026 Rizal fathi · pokonamah well ah.</p>
+        <div class="footer-links">
+            <a href="mailto:rijalfathi303@gmail.com">Email ↗</a>
+            <a href="https://www.instagram.com/rzalfathi/">Instagram ↗</a>
+            <a href="https://open.spotify.com/user/316tvnyomoez25li44ckyuofh6ae">Spotify ↗</a>
+        </div>
+    </footer>
+</body>
+</html>

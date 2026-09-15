@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio and personal website design by Rizal Fathi.">
+    <title>Portfolio & Personal Websites | Rizal Fathi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink:#202320; --muted:#6b716a; --paper:#f4f5ef; --line:#d9ddd4; --lime:#d7f26b; --white:#fff; --serif:Georgia,'Times New Roman',serif; }
+        * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--paper); font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; }
+        a { color:inherit; text-decoration:none; } .container { width:min(100% - 40px, 900px); margin:auto; }
+        header { padding:24px 0; border-bottom:1px solid var(--line); } .nav { display:flex; justify-content:space-between; align-items:center; }
+        .brand { display:flex; align-items:center; gap:10px; font-size:14px; font-weight:800; } .mark { width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:var(--ink); color:var(--lime); font:italic 17px var(--serif); }
+        .back { color:var(--muted); font-size:12px; font-weight:800; } .hero { padding:88px 0 58px; } .eyebrow,.label { color:var(--muted); font:500 11px 'DM Mono',monospace; letter-spacing:.04em; text-transform:uppercase; } h1 { max-width:700px; margin:20px 0 22px; font-size:clamp(3.2rem,8vw,6.7rem); line-height:.94; letter-spacing:-.075em; } h1 em { font-family:var(--serif); font-weight:400; } .lead { max-width:600px; margin:0; color:var(--muted); font-size:17px; line-height:1.75; }
+        .content { display:grid; grid-template-columns:1fr 1fr; gap:1px; margin-bottom:70px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); } .block { padding:30px 30px 33px 0; } .block + .block { padding-left:30px; border-left:1px solid var(--line); } h2 { margin:12px 0 14px; font-size:23px; letter-spacing:-.05em; } .block p,.block li { color:var(--muted); font-size:13px; line-height:1.7; } ul { margin:0; padding-left:18px; }
+        .video { margin:0 0 70px; }
+        .video-container { overflow:hidden; border:1px solid var(--line); background:#202320; border-radius:20px; }
+        .video video { display:block; width:100%; height:auto; max-height:560px; object-fit:contain; }
+        .order { display:flex; justify-content:space-between; align-items:center; gap:25px; padding:28px 0 72px; } .order p { max-width:500px; margin:0; color:var(--muted); font-size:13px; line-height:1.65; } .button { display:inline-flex; align-items:center; gap:10px; flex-shrink:0; padding:15px 18px; background:var(--ink); color:var(--white); border-radius:4px; font-size:12px; font-weight:800; } .button:hover { background:#3c423d; }
+        footer { padding:22px 0 35px; border-top:1px solid var(--line); color:var(--muted); font:11px 'DM Mono',monospace; }
+        @media (max-width:650px) { .container { width:min(100% - 32px,560px); } header { padding:18px 0; } .hero { padding:62px 0 48px; } h1 { font-size:clamp(3.2rem,16vw,5rem); } .lead { font-size:15px; } .video { margin-bottom:48px; } .content { display:block; } .block,.block + .block { padding:25px 0; border-left:0; } .block + .block { border-top:1px solid var(--line); } .order { display:block; padding-top:25px; } .button { margin-top:20px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="index.html"><span class="mark">R</span> Rizal Fathi</a><a class="back" href="index.html">← Website list</a>
+        </div>
+    </header>
+    <main class="container">
+        <section class="hero">
+            <div class="eyebrow">01 / Social Media Hub</div>
+            <h1>Connect all your social media <em>in one place.</em></h1>
+            <p class="lead">Website yang mengumpulkan semua link media sosialmu dalam satu tempat, membuat lebih mudah bagi pengunjung untuk terhubung dengan kamu.</p>
+        </section>
+        <section class="content"><div class="block">
+            <div class="label">What it is</div>
+            <h2>Rumah digital untuk semua media sosialmu.</h2>
+            <p>Semua link media sosialmu ditempatkan dengan rapi dalam satu halaman yang mudah diakses dan dikelola.</p></div>
+            <div class="block">
+                <div class="label">What's included</div>
+                <h2>Fitur yang lengkap dan user-friendly.</h2>
+                <ul><li>Link ke semua platform media sosial</li>
+                    <li>Tampilan responsif untuk semua perangkat</li>
+                    <li>Customization sesuai dengan brand dan keinginan kamu</li>
+                </ul>
+            </div>
+        </section>
+        <section class="video">
+            <h2><em>#1</em> Professional Social Media Hub (15K)</h2>
+            <div class="video-container">
+                <video controls preload="metadata" playsinline>
+                    <source src="res/Social Media Hub Videos/SMH-template1.mp4" type="video/mp4">
+                    Your browser does not support the video element. Please download the video to view it.
+                </video>
+                <a class="button" href="https://wa.me/6285189972322?text=Halo%20Rizal%2C%20saya%20tertarik%20memesan%20website%20Social%20Media%20Hub%professional%ini.%20Berikut%20detail%20pesanan%20saya%3A%20">Pesan website ini ↗</a>
+            </div>
+            <h2 style="margin-top: 20%;"><em>#2</em> Casual Social Media Hub (15K)</h2>
+            <div class="video-container">
+                <video controls preload="metadata" playsinline>
+                    <source src="res/Social Media Hub Videos/SMH-template2.mp4" type="video/mp4">
+                    Your browser does not support the video element. Please download the video to view it.
+                </video>
+                <a class="button" href="https://wa.me/6285189972322?text=Halo%20Rizal%2C%20saya%20tertarik%20memesan%20website%20Social%20Media%20Hub%casual%ini.%20Berikut%20detail%20pesanan%20saya%3A%20">Pesan website ini ↗</a>
+            </div>
+            <h2 style="margin-top: 20%;"><em>#3</em> Retro Social Media Hub (20K)</h2>
+            <div class="video-container">
+                <video controls preload="metadata" playsinline>
+                    <source src="res/Social Media Hub Videos/SMH-template3.mp4" type="video/mp4">
+                    Your browser does not support the video element. Please download the video to view it.
+                </video>
+                <a class="button" href="https://wa.me/6285189972322?text=Halo%20Rizal%2C%20saya%20tertarik%20memesan%20website%20Social%20Media%20Hub%retro%ini.%20Berikut%20detail%20pesanan%20saya%3A%20">Pesan website ini ↗</a>
+            </div>
+        </section>
+        <section class="order">
+            <p>Ceritakan platform media sosial yang ingin kamu tampilkan dan preferensi desainmu. Kita bisa mulai dari ide sederhana sampai menjadi website yang siap dibagikan.</p>
+            <a class="button" href="https://wa.me/6285189972322?text=Halo%20Rizal%2C%20saya%20tertarik%20memesan%20website%20Social%20Media%20Hub.%20Berikut%20detail%20pesanan%20saya%3A%20">Pesan website ini ↗</a>
+        </section>
+    </main>
+    <footer class="container">© 2026 Rizal Fathi · Website design & development.</footer>
+</body>
+</html>
